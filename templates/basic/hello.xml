@@ -1,0 +1,39 @@
+<app>
+    <services>
+        <hello>
+            <requirements>
+                <requirement>nameko</requirement>
+                <requirement>nameko-redis</requirement>
+            </requirements>
+            <modules>
+                <module name="hello" classname="GreetingService" classtype="nameko" servicename="hello_service">
+                    <attributes>
+
+                    </attributes>
+                    <methods>
+                        <method name="get">
+                            <parameters>
+                                
+                            </parameters>
+                        </method>
+                    </methods>
+                </module>
+            </modules>
+            <files>
+                <file>config.yml</file>
+            </files>
+            <docker>
+                <image>python:3</image>
+                <apps>
+                    <app>
+                    netcat
+                </app>
+                </apps>
+            </docker>
+            <script>
+            run.sh
+        </script>
+        </hello>
+    </services>
+    <gateway></gateway>
+</app>
